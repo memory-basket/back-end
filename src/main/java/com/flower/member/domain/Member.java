@@ -1,4 +1,4 @@
-package com.flower.member;
+package com.flower.member.domain;
 
 import com.flower.auth.Role;
 import lombok.Builder;
@@ -32,6 +32,8 @@ public class Member {
     private String phoneNumber;
 
     private String providerId;
+
+    private String connectionUrl;
 
     @Enumerated(EnumType.STRING)
     private Role role;
