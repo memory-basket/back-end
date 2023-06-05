@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "member")
@@ -39,11 +40,12 @@ public class Member {
     private Role role;
 
     public Member() {
-
+        generateLink();
     }
 
     @Builder(builderClassName = "OAuth2Register", builderMethodName = "oauth2Register")
     public Member(String username, String email, String password, String name, String phoneNumber, Role role, String providerId) {
+        this.connectionUrl = generateLink();
         this.username = username;
         this.email = email;
         this.password = password;
@@ -53,4 +55,7 @@ public class Member {
         this.providerId = providerId;
     }
 
+    private String generateLink() {
+        return UUID.randomUUID().toString();
+    }
 }
