@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176c05e-63d5-467f-a1f9-77b430799d62" name="Changes" comment="feat: 카카오 로그인 및 회원가입/로그인 구현(#1)">
+    <list default="true" id="0176c05e-63d5-467f-a1f9-77b430799d62" name="Changes" comment="docs: gitignore 수정">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flower/auth/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flower/auth/CustomOAuth2UserService.java" afterDir="false" />
