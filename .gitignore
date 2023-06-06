@@ -4,6 +4,9 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+.idea/workspace.xml
+src/main/resources/application.properties
+src/main/resources/application-test.properties
 
 ### STS ###
 .apt_generated
@@ -25,8 +28,6 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-src/main/resources/application.properties
-src/main/resources/application-test.properties
 
 ### NetBeans ###
 /nbproject/private/

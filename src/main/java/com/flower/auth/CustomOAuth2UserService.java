@@ -46,10 +46,9 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService{
         String email = oAuth2UserInfo.getEmail();
         String name = oAuth2UserInfo.getName();
         String phoneNumber = oAuth2UserInfo.getPhoneNumber();
-        Role role = Role.PATIENT;
 
         Member member = Member.oauth2Register()
-                .username(username).email(email).password(password).name(name).phoneNumber(phoneNumber).role(role)
+                .username(username).email(email).password(password).name(name).phoneNumber(phoneNumber)
                 .build();
 
         memberService.saveMember(member);
