@@ -1,6 +1,6 @@
 package com.flower.member;
 
-import com.flower.auth.Role;
+import com.flower.member.constant.Role;
 import com.flower.member.domain.Member;
 import com.flower.member.service.MemberService;
 import org.junit.jupiter.api.DisplayName;
