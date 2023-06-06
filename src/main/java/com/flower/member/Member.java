@@ -1,6 +1,5 @@
 package com.flower.member;
 
-import com.flower.auth.Role;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,19 +35,18 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public Member() {
+    public Member(){
 
     }
 
     @Builder(builderClassName = "OAuth2Register", builderMethodName = "oauth2Register")
-    public Member(String username, String email, String password, String name, String phoneNumber, Role role, String providerId) {
+    public Member(String username, String email, String password, String name, String phoneNumber, Role role) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.role = role;
-        this.providerId = providerId;
     }
 
 }

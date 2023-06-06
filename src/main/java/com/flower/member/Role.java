@@ -1,4 +1,4 @@
-package com.flower.auth;
+package com.flower.member;
 
 public enum Role {
     PATIENT, PROTECTOR
