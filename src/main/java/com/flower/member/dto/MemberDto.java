@@ -1,6 +1,6 @@
 package com.flower.member.dto;
 
-import com.flower.auth.Role;
+import com.flower.member.constant.Role;
 import lombok.Getter;
 import lombok.Setter;
 
