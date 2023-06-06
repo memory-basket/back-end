@@ -1,6 +1,6 @@
 package com.flower.config;
 
-import com.flower.member.MemberService;
+import com.flower.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

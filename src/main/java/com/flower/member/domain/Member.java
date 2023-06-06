@@ -1,6 +1,6 @@
 package com.flower.member.domain;
 
-import com.flower.auth.Role;
+import com.flower.member.Role;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

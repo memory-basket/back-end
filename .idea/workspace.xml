@@ -12,6 +12,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flower/member/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flower/member/MemberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/flower/member/MemberDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/flower/member/MemberRoleDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/flower/member/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/flower/member/MemberServiceTest.java" afterDir="false" />
+    <list default="true" id="0176c05e-63d5-467f-a1f9-77b430799d62" name="Changes" comment="feat: 유저 역할 부여 개발 중(#1)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/flower/auth/Role.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/flower/auth/userInfo/KakaoUserInfo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/flower/auth/userInfo/OAuth2UserInfo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/flower/config/CustomAuthenticationEntryPoint.java" afterDir="false" />
@@ -196,6 +199,7 @@
       <updated>1686027836330</updated>
     </task>
     <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

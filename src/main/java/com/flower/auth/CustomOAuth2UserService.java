@@ -2,9 +2,8 @@ package com.flower.auth;
 
 import com.flower.auth.userInfo.KakaoUserInfo;
 import com.flower.auth.userInfo.OAuth2UserInfo;
-import com.flower.member.Member;
-import com.flower.member.MemberService;
-import com.flower.member.repository.MemberRepository;
+import com.flower.member.domain.Member;
+import com.flower.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
