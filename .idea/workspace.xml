@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176c05e-63d5-467f-a1f9-77b430799d62" name="Changes" comment="feat: 유저 역할 부여 개발 중(#1)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0176c05e-63d5-467f-a1f9-77b430799d62" name="Changes" comment="feat: 유저 역할 부여 개발 중(#1)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +139,7 @@
       <workItem from="1685775287127" duration="3557000" />
       <workItem from="1685884318419" duration="2484000" />
       <workItem from="1685939477085" duration="23126000" />
-      <workItem from="1686026128644" duration="1698000" />
+      <workItem from="1686026128644" duration="2178000" />
     </task>
     <task id="LOCAL-00001" summary="changed files update">
       <created>1685710094551</created>
@@ -164,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686026296836</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: 유저 역할 부여 개발 중(#1)">
+      <created>1686027836329</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686027836330</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
