@@ -21,18 +21,13 @@ public class Member {
     private Long id;
 
     @Column(unique = true)
-    private String username;
+    private String userName;
 
-    @Column(unique = true)
     private String email;
-
-    private String password;
 
     private String name;
 
     private String phoneNumber;
-
-    private String providerId;
 
     private String connectionUrl;
 
@@ -43,15 +38,14 @@ public class Member {
         generateLink();
     }
 
-    @Builder(builderClassName = "OAuth2Register", builderMethodName = "oauth2Register")
-    public Member(String username, String email, String password, String name, String phoneNumber, String providerId) {
+    @Builder(builderClassName = "createMember", builderMethodName = "createMember")
+    public Member(String userName, String email, String name, String phoneNumber, Role role) {
         this.connectionUrl = generateLink();
-        this.username = username;
+        this.userName = userName;
         this.email = email;
-        this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.providerId = providerId;
+        this.role = role;
     }
 
     private String generateLink() {
