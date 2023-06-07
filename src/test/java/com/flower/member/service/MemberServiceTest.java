@@ -1,8 +1,6 @@
-package com.flower.member;
+package com.flower.member.service;
 
-import com.flower.member.constant.Role;
 import com.flower.member.domain.Member;
-import com.flower.member.service.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +25,11 @@ class MemberServiceTest {
     public Member OAuth2Register(){
         String username = "kakao_123";
         String email = "hosu0125@naver.com";
-        String password = passwordEncoder.encode("패스워드");
         String name = "장효선";
         String phoneNumber = "01083438285";
-        Role role = Role.PATIENT;
 
-        return Member.oauth2Register()
-                .username(username).email(email).password(password).name(name).phoneNumber(phoneNumber).role(role)
+        return Member.createMember()
+                .userName(username).email(email).name(name).phoneNumber(phoneNumber)
                 .build();
     }
 
@@ -43,10 +39,9 @@ class MemberServiceTest {
         Member member = OAuth2Register();
         Member savedMember = memberService.saveMember(member);
 
-        assertEquals(member.getUsername(), savedMember.getUsername());
+        assertEquals(member.getUserName(), savedMember.getUserName());
         assertEquals(member.getEmail(), savedMember.getEmail());
         assertEquals(member.getName(), savedMember.getName());
-        assertEquals(member.getPassword(), savedMember.getPassword());
         assertEquals(member.getPhoneNumber(), savedMember.getPhoneNumber());
         assertEquals(member.getRole(), savedMember.getRole());
     }
