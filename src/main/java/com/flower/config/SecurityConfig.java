@@ -16,20 +16,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${jwt.secret}")
-    private String secret;
-
-    @Autowired
-    MemberService memberService;
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public JwtUtil jwtUtil(){
-        return new JwtUtil(secret);
     }
 
     @Bean

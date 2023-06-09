@@ -3,6 +3,7 @@ package com.flower.auth;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.net.URL;
 import java.util.HashMap;
 
 @Service
+@Slf4j
 public class KakaoAPI {
 
     @Value("#{kakao['token-uri']}")
@@ -25,6 +27,9 @@ public class KakaoAPI {
 
     @Value("#{kakao['client-secret']}")
     private String clientSecret;
+
+    @Value("#{kakao['authorization-uri']}")
+    private String authorizationUri;
 
     @Value("#{kakao['redirect-uri']}")
     private String redirectUri;
@@ -136,6 +141,13 @@ public class KakaoAPI {
         }
 
         return userInfo;
+    }
+
+    public String responseUrl() {
+        String kakaoLoginUrl = authorizationUri+"?client_id="
+                +clientId+"&redirect_uri="+redirectUri+"&response_type=code";
+        log.info("kakaoLoginUrl: "+kakaoLoginUrl);
+        return kakaoLoginUrl;
     }
 
 }

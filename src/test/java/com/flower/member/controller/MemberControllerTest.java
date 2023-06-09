@@ -36,7 +36,6 @@ class MemberControllerTest {
 
         Member member = memberRepository.findById(newMember.getId()).orElseThrow(EntityNotFoundException::new);
         System.out.println("username : " + member.getId());
-        System.out.println("password : " + member.getPassword());
     }
 
     @Test

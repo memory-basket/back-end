@@ -2,6 +2,7 @@ package com.flower.member.controller;
 
 import com.flower.auth.KakaoAPI;
 import com.flower.member.domain.Member;
+import com.flower.member.dto.MemberDto;
 import com.flower.member.dto.response.ConnectionLinkResponse;
 import com.flower.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -11,8 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+import java.io.IOException;
 
 @Slf4j
 @RestController
@@ -27,21 +29,10 @@ public class MemberController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    @RequestMapping ("/login/oauth2/kakao")
-    public void kakaoLogin(@RequestParam("code") String code, HttpSession httpSession){
+    @GetMapping("/login/kakao")
+    public ResponseEntity<MemberDto> kakaoCallback(@RequestParam("code") String code) throws Exception {
         String accessToken = kakaoAPI.getAccessToken(code);
-        HashMap<String, Object> userInfo = kakaoAPI.getUserInfo(accessToken);
-        log.info("KakaoLogin Controller : "+userInfo);
-
-        if(userInfo.get("email")!=null) {
-            httpSession.setAttribute("userId", userInfo.get("email"));
-            httpSession.setAttribute("access_Token", accessToken);
-        }
-
-        Member member = Member.createMember()
-                .email(userInfo.get("email").toString()).name(userInfo.get("nickname").toString()).userName("kakao_"+userInfo.get("username").toString())
-                .build();
-        memberService.saveMember(member);
+        return ResponseEntity.ok(memberService.kakaoLogin(accessToken));
     }
 
     @GetMapping("/{userId}/connection-link")
@@ -52,4 +43,6 @@ public class MemberController {
                 memberService.getConnectionLink(id)
         );
     }
+
+
 }

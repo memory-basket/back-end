@@ -6,5 +6,12 @@ import lombok.Setter;
 
 @Getter @Setter
 public class MemberDto {
-    private Role role;
+
+    private String token;
+    private String username;
+
+    public MemberDto(String token, String username) {
+        this.token = token;
+        this.username = username;
+    }
 }
