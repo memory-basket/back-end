@@ -2,6 +2,7 @@ package com.flower.member.service;
 
 import com.flower.auth.KakaoAPI;
 import com.flower.common.util.JwtUtil;
+import com.flower.member.constant.Role;
 import com.flower.member.domain.Member;
 import com.flower.member.dto.MemberDto;
 import com.flower.member.dto.response.ConnectionLinkResponse;
@@ -74,6 +75,13 @@ public class MemberService {
         } catch (Exception e){
             throw new Exception("회원가입에 실패했습니다.");
         }
+    }
+
+    public MemberDto updateRole(String username, Role role) {
+        Member member = memberRepository.findByUserName(username);
+        member.setRole(role);
+        memberRepository.flush();
+        return new MemberDto(member.getUserName(), member.getEmail(), member.getName(), member.getPhoneNumber(), member.getRole());
     }
 
 }
