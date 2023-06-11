@@ -1,5 +1,6 @@
 package com.flower.member.controller;
 
+import com.flower.member.constant.Role;
 import com.flower.member.domain.Member;
 import com.flower.member.repository.MemberRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -25,20 +26,27 @@ class MemberControllerTest {
     EntityManager em;
 
     @Test
-    @DisplayName("oauth2 회원가입 테스트")
-    @WithMockUser(username = "hyoseon", password = "12345", roles = "USER")
-    public void saveMember() {
+    @DisplayName("역할 부여 테스트")
+    @WithMockUser(username = "hyoseon", password = "12345", roles = "")
+    public void setRole() {
         Member newMember = new Member();
+        String role = "patient";
+        Role selectedRole = null;
+        if (role == "patient"){
+            selectedRole = Role.PATIENT;
+        } else if (role == "protector") {
+            selectedRole = Role.PROTECTOR;
+        }
+        newMember.setUserName("kakao_0125");
+        newMember.setRole(selectedRole);
         memberRepository.save(newMember);
 
         em.flush();
         em.clear();
 
-        Member member = memberRepository.findById(newMember.getId()).orElseThrow(EntityNotFoundException::new);
-        System.out.println("username : " + member.getId());
+        Member member = memberRepository.findByUserName(newMember.getUserName());
+        System.out.println("username: "+member.getUserName());
+        System.out.println("role: "+member.getRole().toString());
     }
 
-    @Test
-    void getConnectionLink() {
-    }
 }
