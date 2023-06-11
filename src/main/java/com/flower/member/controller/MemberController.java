@@ -1,6 +1,7 @@
 package com.flower.member.controller;
 
 import com.flower.auth.KakaoAPI;
+import com.flower.member.constant.Role;
 import com.flower.member.domain.Member;
 import com.flower.member.dto.MemberDto;
 import com.flower.member.dto.response.ConnectionLinkResponse;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.Principal;
 
 @Slf4j
 @RestController
@@ -44,5 +46,15 @@ public class MemberController {
         );
     }
 
+    @PostMapping("/role")
+    public @ResponseBody ResponseEntity setRole(@RequestParam("role") String role, String username) {
+        Role selectedRole = null;
+        if (role == "patient"){
+            selectedRole = Role.PATIENT;
+        } else if (role == "protector") {
+            selectedRole = Role.PROTECTOR;
+        }
+        return ResponseEntity.ok(memberService.updateRole(username, selectedRole));
+    }
 
 }
