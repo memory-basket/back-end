@@ -25,7 +25,7 @@ public class Team {
 
     private String todayQuesion;
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
-    private List<Question> repliedQuestion;
+//    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
+//    private List<Question> repliedQuestion;
 
 }
